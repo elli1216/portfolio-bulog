@@ -1,8 +1,10 @@
 import Header from "./Header"
 import Members from "./Members"
-import Services from "./Services";
+import Projects from "./Projects";
 import About from "./About";
 import members from "./membersData";
+import Contact from "./Contact";
+import Footer from "./Footer";
 import './styles.css';
 
 function App() {
@@ -20,7 +22,9 @@ function App() {
             <Members key={index} img={member.img} name={member.name} desc={member.desc} />
           ))}
       </div>
-      <Services/>
+      <Projects/>
+      <Contact/>
+      <Footer/>
     </>
   )
 }

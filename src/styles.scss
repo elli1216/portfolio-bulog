@@ -1,6 +1,7 @@
 * {
   text-decoration: none;
   list-style: none;
+  overflow-x: hidden;
 }
 
 :root {
@@ -33,76 +34,96 @@ header {
     background-repeat: no-repeat;
     display: flex;
     justify-content: space-around;
-    padding: 20px 50px 80px 50px; 
-  
+    padding: 20px 50px 80px 50px;
+
     .header-title {
       color: var(--text-color);
       font-family: 'Pacifico';
       margin: 0;
       font-size: 3rem;
     }
-  
+
     .nav-list {
       ul {
         display: flex;
         justify-content: space-evenly;
+        width: 100%;
+        margin: 10px 10px 10px 0;
+        padding: 0;
       }
-  
-      .nav-link {
-        color: var(--text-color);
-        font-family: 'Poppins', sans-serif;
-        font-size: 1.5rem;
-        padding: 0 1rem;
-  
-        &:hover {
-          text-decoration: underline;
-          cursor: pointer;
-        }
-  
+
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
       }
-  
-      .nav-link-btn {
-        @extend .nav-link;
+
+    }
+
+    .nav-link-btn {
+      color: var(--text-color);
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.5rem;
+      padding: 0 15px;
+      background-color: var(--primary-color);
+      border: solid 1px var(--primary-color);
+      border-radius: 5px;
+      transition: all 0.5s ease;
+
+      s &:hover {
         background-color: var(--primary-color);
-        padding: 20px;
-        border: solid 1px var(--primary-color);
-        border-radius: 8px;
-        transition: all 0.5s ease;
-  
-        &:hover {
-          background-color: var(--primary-color);
-          text-decoration: none;
-          box-shadow: 0 0 10px 5px var(--primary-color);
-        }
+        text-decoration: none;
+        box-shadow: 0 0 10px 5px var(--primary-color);
       }
     }
   }
 }
 
-.hamburger {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-.about-container{
+.about-container {
   background-color: black;
 
-  .about-title{
+  .about-title {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    margin-top: 6rem;
     font-size: 4rem;
+    margin: 0;
+    padding-top: 6rem;
     color: var(--text-color);
   }
+
+  .about-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 40px;
+    padding-bottom: 6rem;
+
+    .about-logo {
+      color: var(--text-color);
+      font-family: 'Pacifico';
+      margin: 0;
+      max-width: 50%;
+      font-size: 8rem;
+      text-align: center;
+    }
+
+    .about-paragraph {
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+      font-size: 1.5rem;
+      max-width: 50%;
+      color: var(--text-color);
+      padding: 0 3rem;
+    }
+  }
+
 }
 
 .members-title {
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    margin-top: 6rem;
-    font-size: 4rem;
-    color: var(--text-color);
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin-top: 6rem;
+  font-size: 4rem;
+  color: var(--text-color);
 }
 
 .members-list {
@@ -140,66 +161,279 @@ header {
     margin: 0;
     color: var(--text-color);
   }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    .fa-brands {
+      font-size: 1.8rem;
+      margin: 0 10px;
+      color: var(--text-color);
+      border-radius: 50%;
+
+      &:hover {
+        color: white;
+        box-shadow: 0 0 10px 5px var(--text-color);
+      }
+    }
+  }
 }
 
-.services-container {
+.projects-container {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
 
-  .service {
-    border: solid 1px black;
-    border-radius: 8px;
-    box-shadow: 5px 5px 5px rgb(145, 145, 145);
-    padding: 20px;
-    margin: 10px;
-    width: 100%;
-    text-align: center;
-    background-color: var(--secondary-color);
-  }
-
-  .services-title {
+  .projects-title {
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 6rem;
     font-size: 4rem;
     color: var(--text-color);
   }
 
-  .services-list {
+  .projects-list {
     display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
     width: 100%;
+
+    .project-list-title {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 2rem;
+      color: var(--text-color);
+    }
+
+    .project {
+      display: flex;
+      flex-wrap: wrap;
+      border: solid 1px black;
+      border-radius: 8px;
+      box-shadow: 5px 5px 5px rgb(145, 145, 145);
+      padding: 20px;
+      margin: 10px;
+      width: 100%;
+      background-color: var(--secondary-color);
+      transition: all 0.5s ease;
+
+      &:hover {
+        background-color: var(--primary-color);
+        cursor: pointer;
+      }
+
+      .project-img-section {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .project-img {
+          max-width: 30%;
+          height: auto;
+          border-radius: 8px;
+        }
+      }
+    }
   }
 }
 
+.contact-container{
+  display: block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+
+  .contact-title{
+    @extend .members-title;
+  }
+
+  .contact-form{
+    display: block;
+    justify-content: center;
+    flex-direction: row;
+    border: solid 1px black;
+    border-radius: 8px;
+    width: 700px;
+    margin: auto;
+    height: auto;
+    padding: 50px;
+    background-color: var(--primary-color);
+
+    .contact-input{
+      display: block;
+      align-items: center;
+      margin: 10px;
+
+      input{
+        width: 90%;
+        height: 30px;
+        padding: 10px;
+        margin: 10px;
+        border-radius: 5px;
+        border: solid 3px var(--background-color);
+        background-color: var(--primary-color);
+        
+        &::placeholder{
+          color: black;
+        }
+        &:focus{
+          outline: none;
+          border: solid 3px var(--secondary-color);
+        }
+      }
+    }
+    button{
+      background-color: var(--text-color);
+      text-align: center;
+      padding: 10px;
+      width: 100px;
+
+      &:hover{
+        background-color: var(--secondary-color);
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  margin-top: 6rem;
+  color: var(--text-color);
+  height: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 @media screen and (max-width: 768px) {
-  .nav-list {
-    display: none;
-    flex-direction: column;
-    width: 100%;
+  header {
 
-    &.open {
-      display: flex;
-    }
+    .background-div {
+      height: 400px;
 
-    ul {
-      flex-direction: row;
-    }
+      .header-title {
+        font-size: 2rem;
+      }
 
-    li {
-      margin: 10px 0;
-      font-size: 0.5rem;
+      .nav-list {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+
+        .nav-link-btn {
+          padding: 0;
+          overflow: hidden;
+        }
+
+        &.open {
+          display: flex;
+        }
+
+        ul {
+          flex-direction: row;
+        }
+
+        li {
+          margin: 10px 0;
+          font-size: 0.5rem;
+        }
+      }
+
+      .hamburger {
+        display: block;
+        color: var(--text-color);
+      }
     }
   }
 
-  .hamburger {
-    display: block;
-    color: var(--text-color);
-    height: auto;
+  .about-container {
+    .about-title {
+      font-size: 3rem;
+    }
+
+    .about-content {
+      .about-logo {
+        font-size: 4rem;
+      }
+
+      .about-paragraph {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .projects-container {
+    .projects-title {
+      font-size: 3rem;
+      text-align: center;
+    }
+
+    .projects-list {
+      display: block;
+
+      .project {
+        width: 90%;
+
+        .project-img-section {
+          .project-img {
+            width: 30%;
+          }
+        }
+      }
+    }
+  }
+
+  .contact-container {
+    .contact-title {
+      font-size: 3rem;
+    }
+
+    .contact-form {
+      width: 60%;
+
+      .contact-input {
+        input {
+          width: 60%;
+        }
+      }
+    }
+  }
+
+  .members-title {
+    font-size: 3rem;
   }
 
   .card {
     width: 90%;
+  }
+  footer{
+    h2{
+      font-size: 1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  header {
+    .background-div {
+      .header-title {
+        font-size: 1.5rem;
+      }
+
+      .nav-list {
+        .nav-link-btn {
+          display: none;
+        }
+      }
+    }
+  }
+  footer{
+    h2{
+      font-size: 0.5rem;
+    }
   }
 }
